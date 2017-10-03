@@ -27,6 +27,10 @@
                             <label for="points">Points</label>
                             <input class="form-control" id="points" type="number" name="points" value="0" />
                         </div>
+                        <div class="form-group">
+                            <label for="">Notes</label>
+                            <textarea class="form-control" name="notes" rows="8" cols="80"></textarea>
+                        </div>
                         <button type="submit" class="btn btn-primary">Add</button>
                     </form>
                 </div>

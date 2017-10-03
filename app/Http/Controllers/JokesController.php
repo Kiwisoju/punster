@@ -14,6 +14,7 @@ class JokesController extends Controller
 
         $joke->user()->associate(User::find(request()->get('user_id')));
         $joke->referrer()->associate(auth()->user());
+        $joke->notes = request()->get('notes');
         $joke->points = request()->get('points');
 
         $joke->save();
