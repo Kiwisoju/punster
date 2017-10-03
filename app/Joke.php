@@ -16,4 +16,23 @@ class Joke extends Model
     {
         return $this->belongsTo(User::class, 'referrer_id');
     }
+
+    /**
+     * Get the notes for the joke.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getNotesAttribute($value)
+    {
+        if (! is_null($value)) {
+            return $value;
+        }
+
+        if ($this->points < 0) {
+            return 'There\'s no note for this joke, it must have been bad..';
+        }
+
+        return 'There\'s no note for this joke, you\'ll have to trust it was pretty good';
+    }
 }

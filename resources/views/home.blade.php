@@ -48,7 +48,7 @@
                             @foreach ($results as $rank => $user)
                                 <tr>
                                     <td>{{ $rank + 1 }}</td>
-                                    <td>{{ $user->name }}</td>
+                                    <td><a href="/user/{{ $user->id }}">{{ $user->name }}</a></td>
                                     <td>{{ $user->current_points }}</td>
                                 </tr>
                             @endforeach

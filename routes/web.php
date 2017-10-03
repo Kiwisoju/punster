@@ -12,11 +12,17 @@
 */
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect()->route('home');
+    }
+
     return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/user/{user}', 'UserController@show')->name('user');
 
 Route::post('/joke', 'JokesController@store')->name('joke');
